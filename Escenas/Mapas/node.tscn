@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://c2mgtupa8bkfd"]
+
+[ext_resource type="PackedScene" uid="uid://c4pjk31ieflv6" path="res://Escenas/Mapas/MapaPrueba.tscn" id="1_h0tim"]
+[ext_resource type="PackedScene" uid="uid://d1i8w678on6yq" path="res://Escenas/Personajes/evan.tscn" id="2_53xtc"]
+[ext_resource type="Script" uid="uid://crijnudig4tup" path="res://Scripts/time_hud.gd" id="3_xw1yg"]
+[ext_resource type="FontFile" uid="uid://biywltrc548lr" path="res://TLOZ-Links-Awakening.ttf" id="4_mbbeb"]
+[ext_resource type="Script" uid="uid://brimgb1iexe53" path="res://Scripts/lighting_overlay.gd" id="5_komra"]
+[ext_resource type="PackedScene" uid="uid://g5s2sls5w6df" path="res://Escenas/Mecanicas/time_manager.tscn" id="6_dn2da"]
+
+[node name="world" type="Node"]
+
+[node name="Mapa" parent="." instance=ExtResource("1_h0tim")]
+position = Vector2(17, -22)
+
+[node name="Evan" parent="." instance=ExtResource("2_53xtc")]
+position = Vector2(136, 28)
+
+[node name="Tiempoenpantalla" type="CanvasLayer" parent="."]
+script = ExtResource("3_xw1yg")
+
+[node name="TimeLabel" type="Label" parent="Tiempoenpantalla"]
+offset_right = 53.0
+offset_bottom = 16.0
+theme_override_fonts/font = ExtResource("4_mbbeb")
+
+[node name="LightingOverlay" type="ColorRect" parent="Tiempoenpantalla"]
+z_index = 1000
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+script = ExtResource("5_komra")
+
+[node name="TimeManager" parent="." instance=ExtResource("6_dn2da")]
