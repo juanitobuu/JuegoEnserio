@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjtg4c3haoeik"]
+
+[ext_resource type="Script" uid="uid://crijnudig4tup" path="res://Scripts/time_hud.gd" id="1_wthyh"]
+[ext_resource type="FontFile" uid="uid://biywltrc548lr" path="res://TLOZ-Links-Awakening.ttf" id="2_rufrb"]
+[ext_resource type="Script" uid="uid://brimgb1iexe53" path="res://Scripts/lighting_overlay.gd" id="3_k6dlk"]
+
+[node name="Tiempoenpantalla" type="CanvasLayer"]
+script = ExtResource("1_wthyh")
+
+[node name="TimeLabel" type="Label" parent="."]
+offset_right = 53.0
+offset_bottom = 16.0
+theme_override_fonts/font = ExtResource("2_rufrb")
+
+[node name="LightingOverlay" type="ColorRect" parent="."]
+z_index = 1000
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+script = ExtResource("3_k6dlk")
