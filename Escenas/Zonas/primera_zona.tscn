@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://b7le3oh2fyjxa"]
+
+[ext_resource type="PackedScene" uid="uid://bks5xnk5emhnm" path="res://Escenas/Mapas/puebloinicio.tscn" id="1_4vfq2"]
+[ext_resource type="PackedScene" uid="uid://d1i8w678on6yq" path="res://Escenas/Personajes/evan.tscn" id="2_b2bw8"]
+[ext_resource type="PackedScene" uid="uid://cjtg4c3haoeik" path="res://Escenas/Mecanicas/tiempoenpantalla.tscn" id="3_plrr3"]
+[ext_resource type="PackedScene" uid="uid://g5s2sls5w6df" path="res://Escenas/Mecanicas/time_manager.tscn" id="4_b2bw8"]
+[ext_resource type="PackedScene" uid="uid://02ftia85g3u" path="res://Escenas/Mecanicas/caida.tscn" id="5_plrr3"]
+[ext_resource type="PackedScene" uid="uid://d0jlhmf1nted8" path="res://Escenas/Mecanicas/pixelate_transition.tscn" id="6_frbpm"]
+
+[node name="PrimeraZona" type="Node2D"]
+y_sort_enabled = true
+
+[node name="PuebloInicio" parent="." instance=ExtResource("1_4vfq2")]
+position = Vector2(-97, -49)
+
+[node name="Evan" parent="." instance=ExtResource("2_b2bw8")]
+show_behind_parent = true
+position = Vector2(555, 218)
+
+[node name="Tiempoenpantalla" parent="." instance=ExtResource("3_plrr3")]
+
+[node name="TimeManager" parent="." instance=ExtResource("4_b2bw8")]
+
+[node name="Caida" parent="." instance=ExtResource("5_plrr3")]
+position = Vector2(587, 229)
+
+[node name="PixelateTransition" parent="." instance=ExtResource("6_frbpm")]
