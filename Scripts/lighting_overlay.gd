@@ -10,23 +10,38 @@ var tween: Tween
 
 
 func _ready() -> void:
-	color = morning_color
+	set_period(TimeManager.current_period, true)
+
+	if not TimeManager.period_changed.is_connected(_on_period_changed):
+		TimeManager.period_changed.connect(_on_period_changed)
 
 
-func set_period(period: int) -> void:
+func _exit_tree() -> void:
+	if TimeManager.period_changed.is_connected(_on_period_changed):
+		TimeManager.period_changed.disconnect(_on_period_changed)
+
+
+func _on_period_changed(day: int, period: int) -> void:
+	set_period(period)
+
+
+func set_period(period: int, instant: bool = false) -> void:
 	var target_color: Color
 
 	match period:
-		0: # MORNING
+		TimeManager.DayPeriod.MORNING:
 			target_color = morning_color
-		1: # AFTERNOON
+		TimeManager.DayPeriod.AFTERNOON:
 			target_color = afternoon_color
-		2: # NIGHT
+		TimeManager.DayPeriod.NIGHT:
 			target_color = night_color
 		_:
 			return
 
-	_smooth_transition(target_color)
+	if instant:
+		color = target_color
+	else:
+		_smooth_transition(target_color)
 
 
 func _smooth_transition(target: Color) -> void:

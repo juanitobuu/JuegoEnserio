@@ -1,0 +1,87 @@
+[gd_scene load_steps=8 format=3 uid="uid://b8uq7816xrtj7"]
+
+[ext_resource type="Texture2D" uid="uid://cmbkuyw2ecg3n" path="res://FlechaDialogo.png" id="1_1pkxw"]
+[ext_resource type="Script" uid="uid://bwe0ejd1b7k17" path="res://Scripts/dialogue_box.gd" id="1_uwp44"]
+[ext_resource type="FontFile" uid="uid://biywltrc548lr" path="res://TLOZ-Links-Awakening.ttf" id="2_edpso"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwp44"]
+atlas = ExtResource("1_1pkxw")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_edpso"]
+atlas = ExtResource("1_1pkxw")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ytcvb"]
+atlas = ExtResource("1_1pkxw")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ts3kb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uwp44")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_edpso")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ytcvb")
+}],
+"loop": true,
+"name": &"Flecha",
+"speed": 5.0
+}]
+
+[node name="DialogueBox" type="CanvasLayer"]
+layer = 100
+script = ExtResource("1_uwp44")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = -1
+offset_left = -1.0
+offset_top = 178.0
+offset_right = 320.0
+offset_bottom = 239.0
+
+[node name="Portrait" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_right = 67.0
+offset_bottom = 61.0
+
+[node name="NameLabel" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 2.0
+offset_right = 80.0
+offset_bottom = 10.0
+theme_override_fonts/font = ExtResource("2_edpso")
+theme_override_font_sizes/font_size = 8
+text = "Evan"
+horizontal_alignment = 1
+
+[node name="TextLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 20.0
+offset_right = 294.0
+offset_bottom = 59.0
+theme_override_fonts/normal_font = ExtResource("2_edpso")
+theme_override_font_sizes/normal_font_size = 8
+text = "Texto de prueba"
+scroll_active = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel"]
+position = Vector2(309, 52)
+sprite_frames = SubResource("SpriteFrames_ts3kb")
+animation = &"Flecha"
+autoplay = "Flecha"
+frame_progress = 0.0755174
+
+[node name="ChoicesContainer" type="VBoxContainer" parent="."]
+visible = false
+offset_left = 211.0
+offset_top = 140.0
+offset_right = 319.0
+offset_bottom = 177.0
+theme_override_constants/separation = 10

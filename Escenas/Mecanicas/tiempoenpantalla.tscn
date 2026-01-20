@@ -1,16 +1,107 @@
-[gd_scene load_steps=4 format=3 uid="uid://cjtg4c3haoeik"]
+[gd_scene load_steps=16 format=3 uid="uid://cjtg4c3haoeik"]
 
 [ext_resource type="Script" uid="uid://crijnudig4tup" path="res://Scripts/time_hud.gd" id="1_wthyh"]
 [ext_resource type="FontFile" uid="uid://biywltrc548lr" path="res://TLOZ-Links-Awakening.ttf" id="2_rufrb"]
 [ext_resource type="Script" uid="uid://brimgb1iexe53" path="res://Scripts/lighting_overlay.gd" id="3_k6dlk"]
+[ext_resource type="Texture2D" uid="uid://b6vftvykqqicn" path="res://Sprites/CartelTiempo/CARTELTIEMPO.png" id="3_rufrb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k6dlk"]
+atlas = ExtResource("3_rufrb")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhmfg"]
+atlas = ExtResource("3_rufrb")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_id7vu"]
+atlas = ExtResource("3_rufrb")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c45nj"]
+atlas = ExtResource("3_rufrb")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2yfif"]
+atlas = ExtResource("3_rufrb")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5bkfr"]
+atlas = ExtResource("3_rufrb")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7uafn"]
+atlas = ExtResource("3_rufrb")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xumoq"]
+atlas = ExtResource("3_rufrb")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5q4qu"]
+atlas = ExtResource("3_rufrb")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ti5e1"]
+atlas = ExtResource("3_rufrb")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6kwvm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k6dlk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jhmfg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_id7vu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c45nj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2yfif")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5bkfr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7uafn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xumoq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5q4qu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ti5e1")
+}],
+"loop": false,
+"name": &"aparecer",
+"speed": 10.0
+}]
 
 [node name="Tiempoenpantalla" type="CanvasLayer"]
 script = ExtResource("1_wthyh")
 
+[node name="Cartel" type="AnimatedSprite2D" parent="."]
+position = Vector2(160, 63)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_6kwvm")
+animation = &"aparecer"
+frame = 9
+frame_progress = 1.0
+
 [node name="TimeLabel" type="Label" parent="."]
-offset_right = 53.0
-offset_bottom = 16.0
+offset_left = 109.0
+offset_top = 37.0
+offset_right = 219.0
+offset_bottom = 56.0
+theme_override_colors/font_color = Color(0.133333, 0.12549, 0.203922, 1)
 theme_override_fonts/font = ExtResource("2_rufrb")
+theme_override_font_sizes/font_size = 12
 
 [node name="LightingOverlay" type="ColorRect" parent="."]
 z_index = 1000

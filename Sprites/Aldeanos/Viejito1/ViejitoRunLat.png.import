@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://g63yn2jmjjt7"
-path="res://.godot/imported/EvanRUNFASTDOWN.png-25b00527532609a65c257cc6db528683.ctex"
+uid="uid://dc0pomkn3eek4"
+path="res://.godot/imported/ViejitoRunLat.png-b2bdaa039a185cbb82e4454dcf83eeb4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://EvanRUNFASTDOWN.png"
-dest_files=["res://.godot/imported/EvanRUNFASTDOWN.png-25b00527532609a65c257cc6db528683.ctex"]
+source_file="res://Sprites/Aldeanos/Viejito1/ViejitoRunLat.png"
+dest_files=["res://.godot/imported/ViejitoRunLat.png-b2bdaa039a185cbb82e4454dcf83eeb4.ctex"]
 
 [params]
 
