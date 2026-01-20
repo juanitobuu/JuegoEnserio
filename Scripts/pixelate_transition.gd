@@ -6,7 +6,6 @@ var pixelate_shader: Shader
 var tween: Tween
 
 func _ready() -> void:
-	# Crear shader de pixelado
 	pixelate_shader = preload("res://Shaders/pixelate.gdshader")
 	
 	if color_rect:
@@ -14,7 +13,6 @@ func _ready() -> void:
 		shader_material.shader = pixelate_shader
 		color_rect.material = shader_material
 		
-		# Iniciar sin pixelado
 		shader_material.set_shader_parameter("pixel_size", 1.0)
 		color_rect.visible = false
 
@@ -30,9 +28,9 @@ func pixelate_in() -> void:
 	tween = create_tween()
 	tween.tween_method(
 		_set_pixel_size,
-		1.0,      # Inicio: sin pixelado
-		128.0,    # Final: muy pixelado
-		0.5       # Duración
+		1.0,    
+		128.0,   
+		0.5       
 	).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
 
 func pixelate_out() -> void:
@@ -45,9 +43,9 @@ func pixelate_out() -> void:
 	tween = create_tween()
 	tween.tween_method(
 		_set_pixel_size,
-		128.0,    # Inicio: muy pixelado
-		1.0,      # Final: sin pixelado
-		0.5       # Duración
+		128.0,  
+		1.0,   
+		0.5     
 	).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
 	
 	await tween.finished

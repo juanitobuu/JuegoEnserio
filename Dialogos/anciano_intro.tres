@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://bcn7yyr6u8b4v"]
+
+[ext_resource type="Script" uid="uid://dhyea8tbcmt54" path="res://Scripts/DialogueData.gd" id="1_r3164"]
+
+[resource]
+script = ExtResource("1_r3164")
+lines = Array[Dictionary]([{
+"name": "???",
+"text": "Hola"
+}, {
+"name": "Evan",
+"text": "¿Quién eres?"
+}, {
+"name": "xd",
+"text": "Me presento, mi nombre es xd, y te encontré afuera de un putero anoche"
+}, {
+"name": "Evan",
+"text": "No me jodas"
+}])
+metadata/_custom_type_script = "uid://dhyea8tbcmt54"

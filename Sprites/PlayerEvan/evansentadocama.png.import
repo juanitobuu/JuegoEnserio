@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://g63yn2jmjjt7"
-path="res://.godot/imported/EvanRUNFASTDOWN.png-38d470664990134074bc911c2a1c1af5.ctex"
+uid="uid://bkaixe8lreigb"
+path="res://.godot/imported/evansentadocama.png-925dfeda1a046c4b4934f652da3620f4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/PlayerEvan/EvanRUNFASTDOWN.png"
-dest_files=["res://.godot/imported/EvanRUNFASTDOWN.png-38d470664990134074bc911c2a1c1af5.ctex"]
+source_file="res://Sprites/PlayerEvan/evansentadocama.png"
+dest_files=["res://.godot/imported/evansentadocama.png-925dfeda1a046c4b4934f652da3620f4.ctex"]
 
 [params]
 

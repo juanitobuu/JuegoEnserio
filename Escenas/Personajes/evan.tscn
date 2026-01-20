@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://csoaaxccl61o7" path="res://Sprites/PlayerEvan/EvanNEWLATRUN.png" id="5_62myd"]
 [ext_resource type="Texture2D" uid="uid://7b6lbpvdh2is" path="res://Sprites/PlayerEvan/EvanNEWBACKRUN.png" id="6_ie7mm"]
 [ext_resource type="Texture2D" uid="uid://b7ytq5t11umwu" path="res://Sprites/PlayerEvan/EvanNEWcaida.png" id="8_nc1ic"]
-[ext_resource type="Texture2D" uid="uid://g63yn2jmjjt7" path="res://EvanRUNFASTDOWN.png" id="9_0govr"]
+[ext_resource type="Texture2D" uid="uid://g63yn2jmjjt7" path="res://Sprites/PlayerEvan/EvanRUNFASTDOWN.png" id="9_0govr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_03vr5"]
 atlas = ExtResource("1_ep2w6")
@@ -213,21 +213,20 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qriyh"]
-size = Vector2(10.7692, 3.65385)
+size = Vector2(10.7692, 4.42308)
 
 [node name="Evan" type="CharacterBody2D"]
 scale = Vector2(1.3, 1.3)
 script = ExtResource("1_uqjva")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["Jugador"]]
 sprite_frames = SubResource("SpriteFrames_mtnuy")
-animation = &"down"
-frame_progress = 0.621995
+animation = &"IdleDown"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 3
 visibility_layer = 3
-position = Vector2(0, 9.51923)
+position = Vector2(0, 9.13462)
 shape = SubResource("RectangleShape2D_qriyh")
 
 [node name="Camera2D" type="Camera2D" parent="."]
